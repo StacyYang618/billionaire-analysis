@@ -42,7 +42,6 @@ The goal is to explore game genres and review scores, and to perform statistical
   - Range = 12–98  
 
 ### 5. Visualization  
-![Histogram of Review Scores](results/review_score_distribution.png)  
 - Distribution is slightly left-skewed  
 - Most games cluster between 60–80  
 - Outliers exist at both low and high extremes  
