@@ -1,12 +1,12 @@
-# 🎮 Video Game Review Analysis (2004–2010)
+#  Video Game Review Analysis (2004–2010)
 
-## 📌 Overview  
+##  Overview  
 This project analyzes a dataset of video games released between 2004 and 2010.  
 The goal is to explore game genres and review scores, and to perform statistical analysis including descriptive analytics, confidence intervals, and hypothesis testing.  
 
 ---
 
-## 📊 Dataset  
+##  Dataset  
 - **Source**: Dataset collected by Dr. Joe Cox (Video Games 2004–2010)  
 - **Size**: ~1,770 rows, 10+ features  
 - **Key Features**:  
@@ -19,7 +19,7 @@ The goal is to explore game genres and review scores, and to perform statistical
 
 ---
 
-## 🧹 Methods & Workflow  
+##  Methods & Workflow  
 
 ### 1. Dataset Introduction  
 - **Population**: All video games released worldwide between 2004–2010  
@@ -55,7 +55,7 @@ The goal is to explore game genres and review scores, and to perform statistical
 
 ---
 
-## 📈 Results & Insights  
+##  Results & Insights  
 - About **61%** of video games released 2004–2010 were Action games.  
 - The **median review score** is ~70, significantly below 80.  
 - Distribution of scores suggests that while some games achieve very high ratings, most cluster in the average range.  
@@ -63,7 +63,7 @@ The goal is to explore game genres and review scores, and to perform statistical
 
 ---
 
-## 🛠 Tools  
+##  Tools  
 - Python (pandas, numpy, scipy)  
 - Jupyter Notebook  
 - matplotlib, seaborn  
