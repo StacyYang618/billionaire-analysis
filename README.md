@@ -71,7 +71,7 @@ The goal is to explore game genres and review scores, and to perform statistical
 
 ---
 
-## 🚀 How to Run  
+##  How to Run  
 1. Clone this repository:  
    ```bash
    git clone https://github.com/YourUsername/video-game-analysis.git
