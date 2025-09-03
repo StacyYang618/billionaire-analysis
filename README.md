@@ -1,77 +1,90 @@
-#  Video Game Review Analysis (2004–2010)
+#  Video Game Sales & Review Analysis (2004–2010)
 
-##  Overview  
-This project analyzes a dataset of video games released between 2004 and 2010.  
-The goal is to explore game genres and review scores, and to perform statistical analysis including descriptive analytics, confidence intervals, and hypothesis testing.  
+## Overview
+This repository explores the **Video Games dataset (2004–2010, collected by Dr. Joe Cox)** in two stages of analysis:
+1. **Project 1 – Exploratory Data Analysis & Hypothesis Testing**
+2. **Project 2 – Regression & Predictive Modeling (Expansion of Project 1)**
 
----
-
-##  Dataset  
-- **Source**: Dataset collected by Dr. Joe Cox (Video Games 2004–2010)  
-- **Size**: ~1,770 rows, 10+ features  
-- **Key Features**:  
-  - `Title`: Game name  
-  - `Console`: Platform (e.g., Nintendo DS, PlayStation 3)  
-  - `YearReleased`: Year of release  
-  - `US Sales`: Sales in millions  
-  - `Review Score`: Critic review score (0–100)  
-  - Genre indicators (e.g., Action, Sports)  
+The dataset includes more than 1,000 video games with variables such as title, platform, year released, review scores, sales, and genre information.  
+Our goal is to explore descriptive patterns, test hypotheses, and build predictive models to understand factors influencing game sales and classification.
 
 ---
 
-##  Methods & Workflow  
-
-### 1. Dataset Introduction  
-- **Population**: All video games released worldwide between 2004–2010  
-- **Sample**: Dataset of 1,770 games  
-
-### 2. Research Questions  
-1. What percentage of video games released 2004–2010 are Action games?  
-2. Is the **median review score** greater than 80?  
-
-### 3. Data Cleaning  
-- Checked for missing values → none detected  
-- Standardized variable names  
-
-### 4. Descriptive Analytics  
-- Sample size: 1,770  
-- Review Score summary:  
-  - Mean = 68.4  
-  - Median = 70  
-  - Std Dev ≈ 13.9  
-  - Range = 12–98  
-
-### 5. Visualization  
-- Distribution is slightly left-skewed  
-- Most games cluster between 60–80  
-- Outliers exist at both low and high extremes  
-
-### 6. Statistical Analysis  
-- **Confidence Interval**: Proportion of Action games estimated between ~58.5% and ~63.1% (95% CI)  
-- **Hypothesis Test**:  
-  - H₀: Median = 80  
-  - H₁: Median > 80  
-  - Result: Fail to reject H₀ (p ≈ 0.18), meaning there is insufficient evidence to claim median > 80  
+##  Repository Structure
+video-game-sales-analysis/
+│── README.md
+│── video_games.csv
+│── EDA_and_Hypothesis_Testing.ipynb # Project 1
+│── Regression_and_Modeling.ipynb # Project 2 (expansion)
 
 ---
 
-##  Results & Insights  
-- About **61%** of video games released 2004–2010 were Action games.  
-- The **median review score** is ~70, significantly below 80.  
-- Distribution of scores suggests that while some games achieve very high ratings, most cluster in the average range.  
-- Action genre dominates the dataset, but high review scores are not guaranteed by genre alone.  
+##  Project Evolution
+
+### **Project 1: Exploratory Data Analysis & Hypothesis Testing**
+- **Focus:** Descriptive statistics and basic inference.
+- **Key Questions:**
+  - What proportion of games are Action titles?
+  - Is the median review score greater than 80?
+- **Methods:** Histograms, proportions, confidence intervals, hypothesis testing.
+- **Findings:**
+  - Action games had a notable presence.
+  - The median review score was significantly higher than 80, suggesting generally favorable reviews.
 
 ---
 
-##  Tools  
-- Python (pandas, numpy, scipy)  
-- Jupyter Notebook  
-- matplotlib, seaborn  
-- Statistical resampling & hypothesis testing  
+### **Project 2: Regression & Predictive Modeling (Expansion)**
+- **Focus:** Extends Project 1 by incorporating predictive modeling.
+- **Key Questions:**
+  - How do review scores, year released, used price, and max players affect U.S. sales?
+  - Can we classify whether a game is third-person based on predictors like price, year, and platform?
+- **Methods:** 
+  - Multiple Linear Regression (OLS)  
+  - Logistic Regression (Logit)  
+  - Model diagnostics (linearity, multicollinearity, QQ-plots)  
+  - Model evaluation (R², RMSE, Confusion Matrix, ROC, AUC)  
+- **Findings:**
+  - Review Score was positively correlated with U.S. sales, but the linear model had low explanatory power (R² ≈ 0.145).  
+  - Logistic regression showed Platform had a significant effect, but model performance was weak (AUC ≈ 0.568, specificity = 0).  
+  - Models highlight limitations in predictive ability given the available variables.  
 
 ---
 
-##  How to Run  
-1. Clone this repository:  
-   ```bash
-   git clone https://github.com/YourUsername/video-game-analysis.git
+##  Example Outputs
+
+### Linear Regression
+- **R²:** 0.145 (low explanatory power)  
+- **RMSE:** ~0.97 million sales units  
+- Interpretation: Sales are only weakly explained by review scores and selected features.  
+
+### Logistic Regression
+- **Pseudo R²:** 0.0117 (very low)  
+- **AUC:** 0.568 (slightly better than random guessing)  
+- Interpretation: Classifier predicts most games as third-person, leading to high sensitivity but poor specificity.  
+
+---
+
+##  Limitations
+- Dataset lacks important predictors such as **genre, marketing budget, brand recognition, or developer reputation**.  
+- Models showed **low predictive power**, so results should be interpreted cautiously.  
+
+---
+
+##  Future Work
+- Include additional predictors (genre type, marketing spend, developer reputation, player reviews over time).  
+- Explore **advanced machine learning models** (decision trees, random forests) for improved predictive performance.  
+- Study **time trends** in game popularity across platforms to support developers in strategic planning.  
+
+---
+
+##  Tech Stack
+- **Language:** Python (3.12)  
+- **Libraries:** pandas, numpy, matplotlib, seaborn, statsmodels, scikit-learn  
+
+---
+
+ **Summary:**  
+- **Project 1**: Focused on EDA and hypothesis testing.  
+- **Project 2**: Expanded to regression and classification models, showing progression from **statistical analysis → predictive modeling**.  
+Together, these projects demonstrate both **foundational statistical analysis** and **entry-level machine learning approaches** to real-world datasets.
+
